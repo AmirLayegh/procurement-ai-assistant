@@ -5,7 +5,7 @@ from .schema import product_schema
 from .index import procurement_index
 from .query import procurement_query
 from .configs import settings
-
+import os
 # Create REST source for real-time data input
 product_source: sl.RestSource = sl.RestSource(product_schema)
 
