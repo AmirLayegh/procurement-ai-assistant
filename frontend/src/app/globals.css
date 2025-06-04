@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 190 83% 92%; /* Pale cyan #E0F7FA */
+    --foreground: 220 26% 14%; /* Dark Gray/Blue #1A202C */
+
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 220 26% 14%; /* Dark Gray/Blue #1A202C */
+
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 220 26% 14%; /* Dark Gray/Blue #1A202C */
+
+    --primary: 182 52% 42%; /* Forest green #34A0A4 */
+    --primary-foreground: 182 50% 95%; /* Light cyan/white #E6F6F7 */
+
+    --secondary: 195 36% 88%; /* Lighter Steel Blue #D3E1E4 */
+    --secondary-foreground: 195 36% 25%; /* Darker Steel Blue #3A737E */
+
+    --muted: 190 60% 95%; /* Very light cyan #ECF8FA */
+    --muted-foreground: 190 30% 55%; /* Muted cyan/gray #78A5AE */
+
+    --accent: 195 36% 44%; /* Steel blue #468B97 */
+    --accent-foreground: 195 40% 95%; /* Light blue/white #E8F3F5 */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --warning: 30 96% 53%; /* Orange */
+    --warning-foreground: 20 100% 97%; /* Light Orange/White for orange text */
+
+    --border: 190 40% 80%; /* Light cyan border #B3DCE3 */
+    --input: 190 40% 80%; /* Light cyan border #B3DCE3 */
+    --ring: 182 52% 42%; /* Primary color for rings */
+
+    --chart-1: 182 52% 42%; /* primary */
+    --chart-2: 195 36% 44%; /* accent */
+    --chart-3: 12 76% 61%;
+    --chart-4: 173 58% 39%;
+    --chart-5: 43 74% 66%;
+
+    --radius: 0.5rem;
+
+    /* Sidebar specific colors, matching the new theme */
+    --sidebar-background: 210 20% 98%; /* Lighter than page background, almost white for distinct nav */
+    --sidebar-foreground: 220 26% 25%; /* Darker for text on light sidebar */
+    --sidebar-primary: 182 52% 42%; /* primary */
+    --sidebar-primary-foreground: 182 50% 95%; /* primary-foreground */
+    --sidebar-accent: 190 80% 90%; /* Very light cyan for hover */
+    --sidebar-accent-foreground: 182 52% 35%; /* Darker primary for text on hover */
+    --sidebar-border: 190 40% 85%; /* Slightly lighter border for sidebar */
+    --sidebar-ring: 182 52% 42%; /* ring */
+  }
+
+  .dark {
+    --background: 210 20% 10%;
+    --foreground: 210 40% 95%;
+
+    --card: 210 20% 12%;
+    --card-foreground: 210 40% 95%;
+
+    --popover: 210 20% 12%;
+    --popover-foreground: 210 40% 95%;
+
+    --primary: 182 52% 52%;
+    --primary-foreground: 182 50% 15%;
+
+    --secondary: 195 36% 30%;
+    --secondary-foreground: 195 36% 90%;
+
+    --muted: 210 20% 18%;
+    --muted-foreground: 210 30% 65%;
+
+    --accent: 195 36% 54%;
+    --accent-foreground: 195 40% 15%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --warning: 30 90% 50%; /* Orange for dark mode */
+    --warning-foreground: 20 100% 97%; /* Light Orange/White for orange text in dark mode */
+
+    --border: 210 20% 20%;
+    --input: 210 20% 20%;
+    --ring: 182 52% 52%;
+
+    --chart-1: 182 52% 52%;
+    --chart-2: 195 36% 54%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    
+    --sidebar-background: 210 20% 12%;
+    --sidebar-foreground: 210 40% 90%;
+    --sidebar-primary: 182 52% 52%;
+    --sidebar-primary-foreground: 182 50% 15%;
+    --sidebar-accent: 210 20% 20%;
+    --sidebar-accent-foreground: 182 52% 60%;
+    --sidebar-border: 210 20% 18%;
+    --sidebar-ring: 182 52% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    min-height: 100vh;
+  }
+}

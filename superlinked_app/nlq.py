@@ -22,25 +22,37 @@ reliability_description = (
 profit_margin_description = (
     "Weight for profit margin optimization. "
     "Higher weight means preference for products with BETTER margins. "
-    "Keywords: 'profitable', 'high margin', 'best ROI', 'most profitable', 'good margins', 'high profit', 'good profit margin'"
+    "Weight depends on the adjective or noun used to describe the profit margin. "
+    "For example: "
+    "positive weight: 'profitable', 'high margin', 'best ROI', 'most profitable', 'good margins', 'high profit', 'good profit margin', 'excellent margins', 'strong profitability', 'high returns'; "
+    "negative weight: 'low margin', 'poor profit', 'low profitability', 'weak margins', 'minimal profit', 'low returns', 'poor ROI', 'unprofitable'; "
+    "0 should be used if no preference for the profit margin."
 )
 
 return_rate_description = (
     "Weight for return rate optimization. "
-    "Higher weight means preference for products with LOWER return rates. "
-    "Keywords: 'low returns', 'quality', 'fewer complaints', 'reliable products', 'customer satisfaction'"
+    "Higher weight means preference for products with HIGHER return rates. "
+    "example: 'high return rate', 'faulty products', 'returns'"
 )
 
 sales_performance_description = (
     "Weight for sales performance. "
     "Higher weight means preference for HIGH-SELLING products. "
-    "Keywords: 'popular', 'best-selling', 'high demand', 'top performers', 'trending', 'bestsellers'"
+    "Weight depends on the adjective or noun used to describe the sales performance. "
+    "For example: "
+    "positive weight: 'popular', 'best-selling', 'high demand', 'top performers', 'trending', 'bestsellers', 'high sales', 'strong sales', 'excellent sales', 'top selling', 'most sold'; "
+    "negative weight: 'low sales', 'poor performance', 'slow selling', 'low demand', 'unpopular', 'least sold', 'weak sales', 'poor sales', 'minimal sales'; "
+    "0 should be used if no preference for the sales performance."
 )
 
 revenue_performance_description = (
     "Weight for revenue performance. "
     "Higher weight means preference for HIGH-REVENUE generating products. "
-    "Keywords: 'high revenue', 'top earning', 'revenue generators', 'high revenue products'"
+    "Weight depends on the adjective or noun used to describe the revenue performance. "
+    "For example: "
+    "positive weight: 'high revenue', 'top earning', 'revenue generators', 'high revenue products', 'strong revenue', 'excellent revenue', 'best revenue', 'most revenue', 'highest revenue'; "
+    "negative weight: 'low revenue', 'poor revenue', 'minimal revenue', 'weak revenue', 'least revenue', 'low earning', 'poor earning', 'minimal earning'; "
+    "0 should be used if no preference for the revenue performance."
 )
 
 product_description = (

@@ -19,6 +19,7 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
 # Virtual Environment
 .env
@@ -32,17 +33,55 @@ ENV/
 .vscode/
 *.swp
 *.swo
-
-# OS
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
 
-# Project specific
-google-cloud-cli-darwin-arm.tar.gz
+# Cloud
+*.json
+!package.json
+!package-lock.json
+!tsconfig.json
 google-cloud-sdk/
+google-cloud-cli-*.tar.gz
 service-account-key.json
+
+# Logs
+*.log
+logs/
+cloud-run-logs/
+
+# Local development
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Data
+data/*.csv
+data/*.json
+!data/schema.json
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# Distribution
+dist/
+build/
+*.egg-info/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Streamlit
+.streamlit/
+
+# Docker
+.docker/
+docker-compose.override.yml

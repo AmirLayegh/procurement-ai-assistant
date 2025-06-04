@@ -32,5 +32,23 @@ test-category-search:
 	'http://localhost:8080/api/v1/search/procurement_query' \
 	-H 'accept: application/json' \
 	-H 'Content-Type: application/json' \
-	-d '{"natural_query": "Show me products that are in the dresses category with high margin and the cost less than 100 dollars", "limit": 5}' \
+	-d '{"natural_query": "low revenue products", "limit": 5}' \
+	| jq '.'
+
+test-filter-search:
+	@echo "🔍 Testing procurement search with Qdrant..."
+	curl -X 'POST' \
+	'http://localhost:8080/api/v1/search/procurement_query' \
+	-H 'accept: application/json' \
+	-H 'Content-Type: application/json' \
+	-d '{"natural_query": "Show me products with cost less than 100 dollars and revenue more than 1000 dollars", "limit": 5}' \
+	| jq '.'
+
+test-semantic-search:
+	@echo "🔍 Testing procurement search with Qdrant..."
+	curl -X 'POST' \
+	'http://localhost:8080/api/v1/search/procurement_query' \
+	-H 'accept: application/json' \
+	-H 'Content-Type: application/json' \
+	-d '{"natural_query": "Show me products with low revenue and high return rate", "limit": 5}' \
 	| jq '.'
