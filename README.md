@@ -250,6 +250,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Built with ❤️ for retail professionals who deserve better procurement tools.**
+**Built with ❤️ by Amir**
 
 *Transform your procurement process from reactive to predictive with AI-powered intelligence.*
