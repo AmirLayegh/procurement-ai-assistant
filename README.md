@@ -176,21 +176,7 @@ curl -X POST "https://your-api-url/api/v1/search/procurement_query" \
 # High-margin, reliable suppliers
 curl -X POST "https://your-api-url/api/v1/search/procurement_query" \
   -H "Content-Type: application/json" \
-  -d '{"natural_query": "dresses with high profit margin from reliable suppliers", "limit": 10}'
-```
-
-### Frontend Usage
-
-```typescript
-// Search with natural language
-const searchProducts = async (query: string) => {
-  const response = await fetch('/api/v1/search/procurement_query', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ natural_query: query, limit: 20 })
-  });
-  return response.json();
-};
+  -d '{"natural_query": "dresses with low cost and high revenue", "limit": 10}'
 ```
 
 ## 🔧 Configuration
