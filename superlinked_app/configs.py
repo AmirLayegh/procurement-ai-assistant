@@ -10,7 +10,7 @@ DEFAULT_ENV_FILENAME = ".env"
 
 class Settings(BaseSettings):
     
-    text_embedder_name: str = "sentence-transformers/all-MiniLM-L6-v2" 
+    text_embedder_name: str = "sentence-transformers/all-MiniLM-L12-v2" 
     chunk_size: int = 10
     openai_model: str = "gpt-4o" 
         
