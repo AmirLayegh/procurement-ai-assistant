@@ -36,4 +36,8 @@ jobs:
       run: |
         uv run pytest tests/ -v --tb=short
       env:
-        PYTHONPATH: . 
+        PYTHONPATH: .
+        OPENAI_API_KEY: sk-test-fake-key-for-ci
+        QDRANT_API_KEY: fake-qdrant-key-for-ci
+        QDRANT_URL: https://fake-cluster.qdrant.io
+        QDRANT_COLLECTION_NAME: test-collection 
