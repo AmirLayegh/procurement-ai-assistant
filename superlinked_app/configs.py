@@ -9,29 +9,32 @@ load_dotenv(override=True)
 DEFAULT_ENV_FILENAME = ".env"
 
 class Settings(BaseSettings):
-    text_embedder_name: str = "sentence-transformers/all-MiniLM-L12-v2"
+    
+    text_embedder_name: str = "sentence-transformers/all-MiniLM-L6-v2" 
     chunk_size: int = 10
-    openai_model: str = "gpt-4o"
-    openai_api_key: str = ""
-    data_path: str = "./data/csv/products_enriched.csv"
+    openai_model: str = "gpt-4o" 
+        
+    openai_api_key: SecretStr
+    qdrant_api_key: SecretStr
+    qdrant_url: SecretStr 
+    qdrant_collection_name: str = os.environ.get("QDRANT_COLLECTION_NAME")
     
-    qdrant_url: str = os.getenv("QDRANT_URL")
-    qdrant_api_key: str = os.getenv("QDRANT_API_KEY")
-    qdrant_collection_name: str = os.getenv("QDRANT_COLLECTION_NAME")
-    
+
+    data_path: str = "./data/csv/products_enriched.csv"  
     use_qdrant_vector_db: bool = True
     
     model_config = SettingsConfigDict(
         env_file=DEFAULT_ENV_FILENAME, 
-        env_file_encoding="utf-8"
+        env_file_encoding="utf-8",
+        extra="ignore"  # Ignore extra environment variables
     )
     
     @property
     def qdrant_client(self) -> dict:
         if self.qdrant_url and self.qdrant_api_key:
             return {
-                "url": self.qdrant_url,
-                "api_key": self.qdrant_api_key
+                "url": self.qdrant_url.get_secret_value(),  
+                "api_key": self.qdrant_api_key.get_secret_value()  
             }
         else:
             raise ValueError("Qdrant URL and API key must be set")

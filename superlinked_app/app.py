@@ -33,8 +33,8 @@ product_loader_source: sl.DataLoaderSource = sl.DataLoaderSource(
 if settings.use_qdrant_vector_db:
     logger.info("Using Qdrant vector database")
     vector_database = sl.QdrantVectorDatabase(
-        settings.qdrant_url,
-        settings.qdrant_api_key,
+        settings.qdrant_url.get_secret_value(),
+        settings.qdrant_api_key.get_secret_value(),
         collection_name='procurement_products',
     )
 else:

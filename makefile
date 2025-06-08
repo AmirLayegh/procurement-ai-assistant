@@ -52,3 +52,12 @@ test-semantic-search:
 	-H 'Content-Type: application/json' \
 	-d '{"natural_query": "Show me products with low revenue and high return rate", "limit": 5}' \
 	| jq '.'
+
+
+test:
+	@echo "🧪 Running all tests..."
+	uv run pytest
+	
+test-unit:
+	@echo "🧪 Running unit tests..."
+	uv run pytest -m unit

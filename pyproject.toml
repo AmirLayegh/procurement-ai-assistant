@@ -16,5 +16,6 @@ dependencies = [
     "pandas==2.2.1",
     "dotenv",
     "matplotlib",
+    "pytest",
 ]
 

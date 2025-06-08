@@ -34,4 +34,4 @@ ENV PORT=8080
 ENV PYTHONPATH=/app
 
 # Run the application with our custom server module
-CMD ["uv", "run", "python", "-m", "superlinked_app.server"]
+CMD ["uv", "run", "python", "-m", "superlinked.server"]

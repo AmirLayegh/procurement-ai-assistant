@@ -139,7 +139,7 @@ for filter_item in filters:
 procurement_query = procurement_query.with_natural_query(
     natural_query=sl.Param("natural_query"),
     client_config=sl.OpenAIClientConfig(
-        api_key=settings.openai_api_key, 
+        api_key=settings.openai_api_key.get_secret_value(), 
         model=settings.openai_model
     ),
     system_prompt=system_prompt
